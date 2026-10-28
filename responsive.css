@@ -1,6 +1,7 @@
 .contact-links { display: flex; justify-content: center; margin: 28px auto 0; padding-inline: 7vw; }
 .contact-links .contact-email { margin-top: 0; min-height: 44px; font-size: clamp(16px, 1.2vw, 22px); letter-spacing: .02em; }
 .contact-links .copy-email[hidden] { display: none; }
+.project-dialog-close { font-size: 20px; line-height: 1; display: grid; place-items: center; padding: 0; }
 .contact-footer .back-to-top { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 20px; margin-left: auto; border: 1px solid #888; border-radius: 999px; color: #f5f5f5; background: #171717; font: 500 15px/1.4 Pretendard, sans-serif; letter-spacing: 0; white-space: nowrap; transition: background .2s, border-color .2s; }
 .contact-footer .back-to-top span { font-size: 22px; }
 .contact-footer .back-to-top:hover { background: #303030; border-color: #eee; }
