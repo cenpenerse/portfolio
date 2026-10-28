@@ -4,6 +4,10 @@
 
 /* Readable copy and a quieter introduction on phones and tablets. */
 @media (max-width: 1199px) {
+  #CONTACT .gallery-hint { color: #eee; font-weight: 600; }
+  #CONTACT .gallery-hint span { color: #fff; font-size: 22px; font-weight: 600; }
+  #CONTACT .gallery-pagination button { background: linear-gradient(#aaa, #aaa) center/100% 3px no-repeat; }
+  #CONTACT .gallery-pagination button[aria-current] { background-image: linear-gradient(#fff, #fff); }
   #HOME .home-network-layer { display: none; }
   #HOME .home-kicker { font-size: 12px; letter-spacing: .12em; }
   #HOME .home-description { font-size: clamp(16px, 2.5vw, 22px); }
