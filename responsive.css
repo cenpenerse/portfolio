@@ -1,0 +1,48 @@
+/* Readable copy and a quieter introduction on phones and tablets. */
+@media (max-width: 1199px) {
+  #HOME .home-network-layer { display: none; }
+  #HOME .home-kicker { font-size: 12px; letter-spacing: .12em; }
+  #HOME .home-description { font-size: clamp(16px, 2.5vw, 22px); }
+  #HOME .home-question { font-size: 14px; color: #b5b5b5; }
+  #HOME .home-project-link { font-size: 16px; }
+  #HOME .home-chapter { font-size: 12px; letter-spacing: .06em; }
+  #HOME .home-bottom { font-size: 13px; }
+
+  .desktop-nav { font-size: 14px; }
+  .eyebrow, #SKILLS .skills-heading .eyebrow,
+  #ABOUT .about-intro-label > p { font-size: 13px; }
+  #ABOUT .about-body, #ABOUT .about-keyword p,
+  #SKILLS .skills-description, #SKILLS .skills-category-description,
+  .contact-invitation, .project-dialog-description { font-size: 16px; line-height: 1.75; }
+  #ABOUT .about-image-heading > p,
+  #ABOUT .about-image-heading > p:last-child { font-size: 13px; line-height: 1.65; }
+  #ABOUT .about-tag-label, #ABOUT .about-keyword-number,
+  #SKILLS .skills-category-index { font-size: 12px; }
+  #ABOUT .about-tag span, #ABOUT .about-keyword h3 { font-size: 14px; }
+  #ABOUT .about-image-heading { flex-wrap: wrap; }
+  #ABOUT .about-keyword { min-width: 0; }
+  #ABOUT .about-keyword h3 { overflow-wrap: anywhere; }
+  #SKILLS .technology-card { font-size: 14px; white-space: normal; overflow-wrap: anywhere; min-height: 64px; }
+  #SKILLS .technology-card span { min-width: 0; }
+  #SKILLS .skills-description-break { display: none; }
+  .project-title { font-size: clamp(22px, 3.6vw, 36px); color: #b5b5b5; }
+  .project-number, .project-code { font-size: 13px; }
+  .project-row { flex-wrap: wrap; padding-block: 20px; row-gap: 12px; }
+  .project-title { white-space: normal; overflow-wrap: anywhere; }
+  .preview-description { font-size: 16px; }
+  .preview-top { font-size: 12px; }
+  .contact-footer { flex-wrap: wrap; }
+  .contact-footer p { font-size: 15px; line-height: 1.7; }
+  .contact-footer p span, .contact-footer a, .gallery-hint { font-size: 12px; }
+  .contact-footer p span { letter-spacing: .04em; }
+  .section-progress { font-size: 12px; }
+}
+
+@media (max-width: 767px) {
+  #HOME .home-kicker { max-width: 28em; margin-inline: auto; }
+  #HOME .home-headline { white-space: normal; }
+  #ABOUT .about-image-heading > p:last-child { padding-left: 0; }
+  #SKILLS .skills-heading h2 { font-size: clamp(25px, 6.3vw, 46px); gap: 6px; }
+  .contact-email { flex-wrap: wrap; padding-inline: 6vw; }
+  .contact-email a { font-size: clamp(18px, 5vw, 28px); overflow-wrap: anywhere; }
+}
