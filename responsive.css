@@ -57,18 +57,18 @@
 @media (max-width: 1199px) {
   #HOME { height: auto; }
   #HOME .home-stage { position: relative; top: auto; height: auto; min-height: 0; overflow: visible; }
-  #HOME .home-frame { position: relative; inset: auto; display: flex; flex-direction: column; padding: max(160px, 28svh) 8vw 64px; }
+  #HOME .home-frame { position: relative; inset: auto; display: flex; flex-direction: column; padding: max(110px, 15svh) 8vw 48px; }
   #HOME .home-center { display: contents; }
-  #HOME .home-kicker { font-size: 12px; text-align: center; margin: 0 auto 28px; }
+  #HOME .home-kicker { font-size: 14px; text-align: center; margin: 0 auto 20px; }
   #HOME .home-headline { font-size: clamp(30px, 6.5vw, 64px); text-align: center; margin: 0; white-space: normal; }
-  #HOME .home-description { text-align: center; margin: max(180px, 48svh) 0 0; }
-  #HOME .home-question-position { position: relative; inset: auto; transform: none; margin-top: max(130px, 30svh); }
+  #HOME .home-description { text-align: center; margin: clamp(64px, 14svh, 120px) 0 0; }
+  #HOME .home-question-position { position: relative; inset: auto; transform: none; margin-top: clamp(48px, 10svh, 88px); }
   #HOME .home-question--slow { align-self: flex-start; }
   #HOME .home-question--data { align-self: flex-end; }
   #HOME .home-question--failure { align-self: flex-start; margin-left: 5%; }
   #HOME .home-question--simple, #HOME .home-question--scale { display: none; }
-  #HOME .home-question { font-size: clamp(18px, 3vw, 26px); white-space: normal; text-align: inherit; }
-  #HOME .home-project-link { position: relative; inset: auto; transform: none; align-self: center; margin-top: max(130px, 30svh); }
+  #HOME .home-question { font-size: clamp(24px, 4vw, 32px); line-height: 1.5; color: #ddd; white-space: normal; text-align: inherit; }
+  #HOME .home-project-link { position: relative; inset: auto; transform: none; align-self: center; margin-top: clamp(56px, 12svh, 96px); }
   #HOME .home-chapter { position: static; transform: none; text-align: center; margin-top: 60px; white-space: normal; }
   #HOME .home-bottom { position: static; margin-top: 48px; gap: 20px; flex-wrap: wrap; }
   #HOME .home-about-transition { position: relative; height: 45svh; min-height: 220px; }
