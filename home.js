@@ -16,7 +16,11 @@ function renderScroll() {
     stage.style.setProperty('--progress', '0');
     stage.style.setProperty('--copy-opacity', '1');
     stage.style.setProperty('--scene-opacity', '1');
-    stage.style.setProperty('--question-opacity', '1');
+    const transition = home.querySelector('.home-about-transition');
+    const bounds = transition.getBoundingClientRect();
+    const enter = scrollFade(innerHeight * .95, innerHeight * .45, bounds.top);
+    const leave = scrollFade(-bounds.height * .3, -bounds.height * .85, bounds.top);
+    stage.style.setProperty('--question-opacity', (reduceMotion.matches ? 1 : enter * (1 - leave)).toFixed(3));
     homeSteps.forEach((element, index) => {
       const top = element.getBoundingClientRect().top;
       const visible = reduceMotion.matches || index === 0 || top < innerHeight * .82;

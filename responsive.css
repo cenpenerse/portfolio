@@ -71,8 +71,8 @@
   #HOME .home-project-link { position: relative; inset: auto; transform: none; align-self: center; margin-top: clamp(56px, 12svh, 96px); }
   #HOME .home-chapter { position: static; transform: none; text-align: center; margin-top: 60px; white-space: normal; }
   #HOME .home-bottom { position: static; margin-top: 48px; gap: 20px; flex-wrap: wrap; }
-  #HOME .home-about-transition { position: relative; height: 45svh; min-height: 220px; }
-  #HOME .transition-question { opacity: 1; transform: none; filter: none; }
+  #HOME .home-about-transition { position: relative; height: 110svh; min-height: 520px; margin-top: clamp(80px, 18svh, 180px); }
+  #HOME .transition-question { opacity: var(--question-opacity, 0); transform: translateY(calc((1 - var(--question-opacity, 0)) * 30px)); filter: blur(calc((1 - var(--question-opacity, 0)) * 5px)); }
   #HOME.home-scroll-sequence :is(.home-headline, .home-description, .home-question--slow, .home-question--data, .home-question--failure, .home-project-link) {
     opacity: 0; translate: 0 24px; transition: opacity .65s ease, translate .65s ease;
   }
@@ -80,5 +80,6 @@
   #HOME .home-intro-running :is(.home-headline, .home-description, .home-question, .home-project-link, .home-chapter) { animation: none; }
 }
 @media (max-width: 1199px) and (prefers-reduced-motion: reduce) {
+  #HOME .transition-question { opacity: 1; transform: none; filter: none; }
   #HOME.home-scroll-sequence :is(.home-headline, .home-description, .home-question-position, .home-project-link) { opacity: 1; translate: none; transition: none; }
 }
