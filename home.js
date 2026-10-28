@@ -2,7 +2,7 @@ const home = document.querySelector('.home');
 const stage = document.querySelector('.home-stage');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const compactHome = window.matchMedia('(max-width: 1199px)');
-const homeSteps = [...home.querySelectorAll('.home-headline, .home-description, .home-question--slow, .home-question--data, .home-question--failure, .home-project-link')];
+const homeSteps = [...home.querySelectorAll('.home-headline, .home-description, .home-question--slow, .home-question--data, .home-question--failure, .home-project-link, .home-chapter, .home-bottom > p, .home-scroll')];
 const clamp = (n, min = 0, max = 1) => Math.min(max, Math.max(min, n));
 let queued = false;
 function scrollFade(start, end, value) {
