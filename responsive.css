@@ -1,3 +1,18 @@
+.contact-links { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 32px; margin: 36px auto 0; padding: 0 7vw; max-width: 1440px; }
+.contact-links .contact-email { margin-top: 0; font-size: clamp(15px, 1.2vw, 20px); letter-spacing: .02em; }
+.contact-social { display: flex; flex-direction: column; gap: 10px; padding-block: 12px; min-width: 0; }
+.contact-github { text-align: left; justify-self: start; }
+.contact-instagram { text-align: right; justify-self: end; }
+.contact-social span { font: 12px/1.5 Mono, monospace; letter-spacing: .15em; color: #aaa; }
+.contact-social strong { font: 400 clamp(14px, 1.1vw, 18px)/1.5 Inter, sans-serif; overflow-wrap: anywhere; }
+.contact-social:hover strong, .contact-social:focus-visible strong { text-decoration: underline; text-underline-offset: 6px; }
+@media (max-width: 900px) {
+  .contact-links { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 16px; padding-inline: 7vw; }
+  .contact-links .contact-email { grid-column: 1 / -1; grid-row: 1; padding: 0; }
+  .contact-github, .contact-instagram { grid-row: 2; }
+  .contact-links .contact-email a { font-size: clamp(18px, 4.5vw, 25px); }
+}
+
 /* Readable copy and a quieter introduction on phones and tablets. */
 @media (max-width: 1199px) {
   #HOME .home-network-layer { display: none; }
