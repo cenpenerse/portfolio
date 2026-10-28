@@ -1,3 +1,4 @@
+.site-header { background: #000000e6; }
 .contact-links { display: flex; justify-content: center; margin: 28px auto 0; padding-inline: 7vw; }
 .contact-links .contact-email { margin-top: 0; min-height: 44px; font-size: clamp(16px, 1.2vw, 22px); letter-spacing: .02em; }
 .contact-links .copy-email[hidden] { display: none; }
