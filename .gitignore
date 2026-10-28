@@ -1,0 +1,8 @@
+.fig-inspect/
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="백엔드 개발자 김종현의 포트폴리오">
+  <title>김종현 — Backend Developer</title>
+  <link rel="stylesheet" href="./common.css">
+  <link rel="stylesheet" href="./sections.css">
+  <link rel="stylesheet" href="./about.css">
+  <link rel="stylesheet" href="./skills.css">
+  <link rel="stylesheet" href="./transitions.css">
+  <link rel="stylesheet" href="./reveal.css">
+  <link rel="stylesheet" href="./home-design.css">
+  <script src="./home.js" defer></script>
+  <script src="./sections.js" defer></script>
+  <script src="./about.js" defer></script>
+  <script src="./skills.js" defer></script>
+  <script src="./transitions.js" defer></script>
+  <script src="./reveal.js" defer></script>
+  <script src="./home-questions.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#HOME">본문으로 바로가기</a>
+  <header class="site-header">
+    <a class="brand" href="#HOME" aria-label="김종현, 홈으로"><img src="./images/logo.png" alt="김종현 로고" width="575" height="390"></a>
+    <nav class="desktop-nav" aria-label="주 메뉴">
+      <a href="#HOME" aria-current="location"><span>01</span> HOME</a>
+      <a href="#ABOUT"><span>02</span> ABOUT</a>
+      <a href="#SKILLS"><span>03</span> SKILLS</a>
+      <a href="#PROJECT"><span>04</span> PROJECT</a>
+      <a href="#CONTACT"><span>05</span> CONTACT</a>
+    </nav>
+    <button class="menu-toggle" aria-label="전체 메뉴 열기" aria-expanded="false" aria-controls="full-menu"><span></span><span></span></button>
+  </header>
+  <dialog id="full-menu" class="full-menu" aria-label="전체 메뉴">
+    <button class="menu-toggle dialog-close" aria-label="전체 메뉴 닫기"><span></span><span></span></button>
+    <nav aria-label="전체 섹션"><a href="#HOME"><span>01</span> HOME</a><a href="#ABOUT"><span>02</span> ABOUT</a><a href="#SKILLS"><span>03</span> SKILLS</a><a href="#PROJECT"><span>04</span> PROJECT</a><a href="#CONTACT"><span>05</span> CONTACT</a></nav>
+  </dialog>
+  <main>
+    <section id="HOME" class="home" aria-label="소개">
+      <div class="home-stage">
+        <div class="home-frame question-field">
+          <div class="home-network-layer" aria-hidden="true"><svg class="home-network home-network--desktop" viewBox="0 0 1700 960" preserveAspectRatio="none" focusable="false"></svg><svg class="home-network home-network--mobile" viewBox="0 0 390 844" preserveAspectRatio="none" focusable="false"></svg></div>
+          <div class="home-center"><p class="home-kicker">EVERY STRUCTURE STARTS WITH A QUESTION</p><h1 class="home-headline">왜 이렇게 동작할까?</h1><p class="home-description">질문을 구조로 만드는 개발자, 김종현.</p></div>
+          <div class="home-question-position home-question--slow" style="--question-delay:.6s"><button class="home-question" type="button" data-question="slow">왜 느릴까?</button></div>
+          <div class="home-question-position home-question--simple" style="--question-delay:.72s"><button class="home-question" type="button" data-question="simple">더 단순하게 만들 수 없을까?</button></div>
+          <div class="home-question-position home-question--data" style="--question-delay:.84s"><button class="home-question" type="button" data-question="data">데이터는 어디로 흐를까?</button></div>
+          <div class="home-question-position home-question--scale" style="--question-delay:.96s"><button class="home-question" type="button" data-question="scale">사용자가 늘어나면?</button></div>
+          <div class="home-question-position home-question--failure" style="--question-delay:1.08s"><button class="home-question" type="button" data-question="failure">실패해도 괜찮을까?</button></div>
+          <a class="home-project-link" href="#PROJECT">프로젝트 살펴보기 <span aria-hidden="true">↗</span></a>
+          <p class="home-chapter">01 / QUESTION → STRUCTURE</p>
+          <div class="home-bottom"><p>김종현&nbsp; / &nbsp;포트폴리오</p><a class="home-scroll" href="#ABOUT">아래로 스크롤 <svg viewBox="0 0 24 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v21m-8-8 8 8 8-8"/></svg></a></div>
+        </div>
+        <div class="home-about-transition" aria-hidden="true"><span class="transition-question">제가 누구냐고요?</span></div>
+      </div>
+    </section>
+    <section id="ABOUT" class="about-section portfolio-section" aria-labelledby="about-title">
+      <div class="about-layout">
+        <div class="about-copy">
+          <div class="about-intro-label about-enter about-stage-one"><p class="about-section-label"><span>02</span><i aria-hidden="true"></i><span>ABOUT</span></p><h2 id="about-title">제가 누구냐고요?</h2><span class="about-short-rule" aria-hidden="true"></span></div>
+          <h3 class="about-statement about-enter about-stage-two">궁금한 건 그냥 지나치지 못하는<br class="about-desktop-break"> 사람입니다.</h3>
+          <div class="about-body">
+            <p class="about-enter about-body-one">안녕하세요. 백엔드 개발자 김종현입니다.</p>
+            <p class="about-enter about-body-two">새로운 것이 눈에 띄면 직접 해보고, 어떻게 동작하는지 끝까지 파고들고 싶습니다.</p>
+            <p class="about-enter about-body-three">코드 속 문제를 해결하는 과정에서 가장 큰 재미를 느끼고,<br class="about-desktop-break"> 그 호기심은 라이딩, 게임, 다양한 경험으로도 이어집니다.</p>
+            <p class="about-enter about-body-four">작은 아이디어라도 직접 만들어 보고, 배운 것을 기록하며<br class="about-desktop-break"> 조금씩 더 나아가는 개발자가 되고 싶습니다.</p>
+          </div>
+        </div>
+        <div class="about-inspiration">
+          <div class="about-image-heading about-enter about-stage-one"><p>SOME THINGS<br>THAT INSPIRE ME.</p><p>코드 밖의 경험들이<br>저를 더 좋은 개발자로 만들어 줍니다.</p></div>
+          <div class="about-images">
+            <figure class="about-photo about-enter about-photo-one" tabindex="0"><img src="./images/gallery-helmet.webp" alt="밤의 도시에서 헬멧을 쓰고 있는 라이더" loading="lazy" width="1086" height="1448"></figure>
+            <figure class="about-photo about-enter about-photo-two" tabindex="0"><img src="./images/gallery-rain.webp" alt="비 내리는 도시의 도로와 불빛" loading="lazy" width="1672" height="941"></figure>
+            <figure class="about-photo about-enter about-photo-three" tabindex="0"><img src="./images/gallery-sunset.webp" alt="노을 아래 펼쳐진 도시의 스카이라인" loading="lazy" width="1086" height="1448"></figure>
+          </div>
+          <div class="about-interests"><p class="about-enter about-tag-label">INTERESTS</p><ul aria-label="관심사"><li class="about-enter about-tag" style="--tag-index:0"><span tabindex="0">Motorcycle</span></li><li class="about-enter about-tag" style="--tag-index:1"><span tabindex="0">Game</span></li><li class="about-enter about-tag" style="--tag-index:2"><span tabindex="0">Music</span></li><li class="about-enter about-tag" style="--tag-index:3"><span tabindex="0">Hardware</span></li><li class="about-enter about-tag" style="--tag-index:4"><span tabindex="0">Design</span></li><li class="about-enter about-tag" style="--tag-index:5"><span tabindex="0">and more...</span></li></ul></div>
+        </div>
+      </div>
+      <div class="about-keywords" aria-label="나를 설명하는 세 가지 키워드">
+        <article class="about-keyword" style="--keyword-index:0"><span class="about-keyword-number">01</span><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m20 3 15 9v17L20 38 5 29V12Z M5 12l15 9 15-9 M20 21v17 M12 8l16 9"/></svg><div><h3>CURIOSITY</h3><p>왜 그렇게 동작하는지<br>궁금해하고, 직접 알아봅니다.</p></div></article>
+        <article class="about-keyword" style="--keyword-index:1"><span class="about-keyword-number">02</span><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m25 5-7 7 3 5 5 2 8-7c3 9-4 16-12 13L10 37a4 4 0 0 1-6-6l12-12C12 11 17 4 25 5Z M8 31l2 2 M8 6l4-3 5 6-3 4-6-7Z M12 13l-7 9 3 2 8-9"/></svg><div><h3>HANDS-ON</h3><p>생각만 하지 않고<br>직접 만들어 보며 배웁니다.</p></div></article>
+        <article class="about-keyword" style="--keyword-index:2"><span class="about-keyword-number">03</span><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m20 4 17 9-17 9L3 13Z M8 19l-5 3 17 9 17-9-5-3 M8 28l-5 3 17 9 17-9-5-3"/></svg><div><h3>BEYOND CODE</h3><p>코드 밖의 경험에서도<br>새로운 영감을 얻습니다.</p></div></article>
+      </div>
+    </section>
+    <div class="section-transition" data-next-section="SKILLS" aria-hidden="true"><div class="section-transition-stage"><p>SKILLS</p></div></div>
+    <section id="SKILLS" class="skills-section portfolio-section" aria-labelledby="skills-title">
+      <div class="skills-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="skills-heading"><p class="eyebrow"><span>03</span><i></i>SKILLS</p><h2 id="skills-title" aria-label="What I work with"><span class="skills-typed-text" aria-hidden="true">What I work with</span><span class="typing-caret" aria-hidden="true"></span></h2><p class="skills-description">백엔드부터 프론트엔드, 클라우드까지 다양한 기술을 활용해<br class="skills-description-break"> 확장성과 완성도를 갖춘 웹 애플리케이션을 만듭니다.</p></div>
+      <div class="skills-categories" aria-label="사용 기술"></div>
+    </section>
+    <div class="section-transition" data-next-section="PROJECT" aria-hidden="true"><div class="section-transition-stage"><p>PROJECTS</p></div></div>
+    <section id="PROJECT" class="projects-section portfolio-section" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="eyebrow"><span>04</span><i></i>PROJECTS</h2>
+      <div class="projects-layout"><ol class="project-list"></ol>
+        <div class="project-preview" aria-hidden="true"><img src="./images/chrome-preview.webp" alt=""><div class="preview-top"><span class="preview-name">ORDER FLOW</span><span>ABOUT　 GALLERY　 ···</span></div><p class="preview-description">주문·결제 서비스를 주제로 한 더미 프로젝트입니다.</p><span class="preview-arrow">↗</span></div>
+      </div>
+    </section>
+    <div class="section-transition" data-next-section="CONTACT" aria-hidden="true"><div class="section-transition-stage"><p>CONTACT</p></div></div>
+    <section id="CONTACT" class="contact-section portfolio-section" aria-labelledby="contact-title">
+      <div class="contact-heading"><p class="eyebrow"><span>05</span><i></i>CONTACT</p><h2 id="contact-title">CONTACT</h2><p class="contact-invitation">함께할 기회를 기다리고 있습니다.</p><div class="contact-email"><a href="mailto:cenpenerse@naver.com">cenpenerse@naver.com</a><button class="copy-email" aria-label="이메일 주소 복사"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="8" y="3" width="12" height="15" rx="1"/><path d="M16 18v3H4V6h4"/></svg></button></div><p class="copy-status" aria-live="polite"></p></div>
+      <div class="contact-gallery" tabindex="0" role="region" aria-roledescription="캐러셀" aria-label="이미지 갤러리, 좌우 방향키 또는 드래그로 이동">
+        <div class="gallery-track">
+          <figure class="gallery-card" aria-label="1 / 3"><img src="./images/gallery-helmet.webp" alt="도시의 불빛을 바라보는 헬멧을 쓴 사람" loading="lazy" draggable="false"></figure>
+          <figure class="gallery-card is-active" aria-label="2 / 3"><img src="./images/gallery-rain.webp" alt="비 내리는 도시에서 오토바이에 앉아 있는 라이더" loading="lazy" draggable="false"></figure>
+          <figure class="gallery-card" aria-label="3 / 3"><img src="./images/gallery-sunset.webp" alt="노을이 지는 도시를 바라보는 사람" loading="lazy" draggable="false"></figure>
+        </div>
+      </div>
+      <div class="gallery-pagination" role="group" aria-label="갤러리 이미지 선택"><button aria-label="첫 번째 이미지"></button><button aria-label="두 번째 이미지" aria-current="true"></button><button aria-label="세 번째 이미지"></button></div>
+      <p class="gallery-hint">DRAG TO EXPLORE<span aria-hidden="true">←　 →</span></p>
+      <footer class="contact-footer"><p>새로운 가능성을 함께 만들어가고 싶습니다.<br><span>LET’S BUILD SOMETHING GREAT TOGETHER.</span></p><a href="#HOME"><i></i>BACK TO TOP ↑</a></footer>
+    </section>
+  </main>
+  <dialog class="project-dialog" aria-labelledby="project-dialog-title"><button class="project-dialog-close" aria-label="프로젝트 설명 닫기">×</button><img class="project-dialog-image" alt=""><p class="eyebrow">PROJECT</p><h2 id="project-dialog-title"></h2><p class="project-dialog-description"></p><a class="project-dialog-code" target="_blank" rel="noopener noreferrer">CODE ↗</a></dialog>
+  <nav class="section-progress" aria-label="섹션 바로가기"><a href="#HOME" aria-label="01 홈" aria-current="location">01</a><a href="#ABOUT" aria-label="02 소개">02</a><a href="#SKILLS" aria-label="03 기술">03</a><a href="#PROJECT" aria-label="04 프로젝트">04</a><a href="#CONTACT" aria-label="05 연락처">05</a></nav>
+</body>
+</html>

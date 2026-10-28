@@ -1,0 +1,84 @@
+/* HOME: independent questions converge into a single structure. */
+@font-face { font-family: HomeSans; src: url('./fonts/PretendardStdVariable.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+body.on-home .section-progress { visibility: hidden; pointer-events: none; }
+#HOME .home-stage { min-height: 650px; }
+#HOME .home-frame { position: absolute; inset: 0; font-family: HomeSans, sans-serif; opacity: var(--copy-opacity, 1); --pointer-x: 0px; --pointer-y: 0px; --network-rise: 0px; }
+#HOME .home-center { position: absolute; z-index: 3; top: 22.5%; left: 50%; width: 84%; transform: translateX(-50%); text-align: center; pointer-events: none; }
+#HOME .home-kicker { font: 300 clamp(9px, .83vw, 16px)/1.5 Mono, monospace; letter-spacing: .3em; color: #bbb; }
+#HOME .home-headline { margin-top: 35px; font: 750 clamp(42px, 5.15vw, 94px)/1.18 HomeSans, sans-serif; letter-spacing: -.065em; color: #fafafa; white-space: nowrap; }
+#HOME .home-description { font-size: clamp(17px, 1.8vw, 34px); line-height: 1.5; letter-spacing: -.035em; color: #d1d1d1; margin-top: 16px; }
+#HOME .home-network-layer { position: absolute; inset: 0; transform: translateY(calc(-1 * var(--network-rise))); pointer-events: none; }
+#HOME .home-network { display: block; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#HOME .home-network--mobile { display: none; }
+#HOME .network-edge, #HOME .home-route, #HOME .branch-trace { fill: none; stroke: #737373; stroke-width: .75; vector-effect: non-scaling-stroke; }
+#HOME .network-edge { opacity: .52; }
+#HOME .network-guide { fill: none; stroke: #666; stroke-width: .65; stroke-dasharray: 2 5; vector-effect: non-scaling-stroke; opacity: .45; }
+#HOME .network-node { fill: #b8b8b8; stroke: none; }
+#HOME .network-node--square { fill: #bbb; }
+#HOME .network-node--outline { fill: #000; stroke: #999; stroke-width: .8; vector-effect: non-scaling-stroke; }
+#HOME .home-branch { color: #787878; opacity: .65; transform: translate(calc(var(--pointer-x) * .4), calc(var(--pointer-y) * .4)); transition: opacity .3s, color .3s, transform .5s ease-out; }
+#HOME .home-branch .home-route, #HOME .home-branch .branch-trace { stroke: currentColor; transition: stroke .3s; }
+#HOME .home-branch .branch-node { fill: currentColor; stroke: none; transition: fill .3s; }
+#HOME .home-branch.is-active { color: #fff; opacity: 1; }
+#HOME .home-dust { opacity: .55; fill: #a3a3a3; transform: translate(calc(var(--pointer-x) * .8), calc(var(--pointer-y) * .8)); transition: transform .6s ease-out; }
+#HOME .home-question-position { position: absolute; z-index: 2; transform: translate(calc(var(--pointer-x) * var(--question-depth, .65)), calc(var(--pointer-y) * var(--question-depth, .65))); transition: transform .5s ease-out; }
+#HOME .home-question { position: relative; border: 0; background: transparent; color: #929292; padding: 5px 0; font: 500 clamp(12px, 1.14vw, 22px)/1.4 HomeSans, sans-serif; letter-spacing: -.035em; text-align: left; white-space: nowrap; transition: color .3s; cursor: default; }
+#HOME .home-question:hover, #HOME .home-question:focus-visible, #HOME .home-question.is-active { color: #fff; }
+#HOME .home-question:focus-visible { outline: 1px solid #888; outline-offset: 7px; }
+#HOME .home-question--slow { left: 10.6%; top: 15.6%; --question-depth: .8; }
+#HOME .home-question--simple { left: 79%; top: 16.7%; --question-depth: .6; }
+#HOME .home-question--data { left: 5.7%; top: 48.3%; --question-depth: .5; }
+#HOME .home-question--scale { right: 6.1%; top: 50.4%; --question-depth: .7; }
+#HOME .home-question--failure { left: 8.6%; top: 72.7%; --question-depth: .65; }
+#HOME .home-project-link { position: absolute; z-index: 3; top: 78.1%; left: 50%; transform: translateX(-50%); display: inline-flex; gap: 12px; align-items: center; color: #eee; border-bottom: 1px solid #ccc; padding: 8px 9px 10px; font-size: clamp(13px, 1vw, 19px); font-weight: 500; line-height: 1.4; white-space: nowrap; transition: color .25s, border-color .25s; }
+#HOME .home-project-link:hover { color: #fff; border-color: #fff; }
+#HOME .home-chapter { position: absolute; bottom: 9.7%; left: 50%; transform: translateX(-50%); font: 300 clamp(9px, .8vw, 15px)/1.4 Mono, monospace; letter-spacing: .16em; color: #aaa; white-space: nowrap; }
+#HOME .home-bottom { position: absolute; inset: auto 4.9% 6.2%; display: flex; justify-content: space-between; align-items: center; border: 0; color: #ddd; font-size: clamp(11px, .95vw, 18px); line-height: 1.4; font-weight: 400; }
+#HOME .home-scroll { display: flex; align-items: center; gap: 16px; padding: 6px 0; }
+#HOME .home-scroll svg { width: 21px; height: 25px; }
+/* Content stays visible unless JavaScript successfully starts this one-time intro.
+   Every animation reaches its final state even if the cleanup timer fails. */
+#HOME .home-intro-running .home-headline { animation: home-title-enter .6s cubic-bezier(.22,.6,.3,1) both; }
+#HOME .home-intro-running .home-question { animation: home-question-enter .4s ease-out both; animation-delay: var(--question-delay); }
+#HOME .home-intro-running .home-route, #HOME .home-intro-running .branch-trace, #HOME .home-intro-running .network-edge { stroke-dasharray: 1; animation: home-draw .6s cubic-bezier(.22,.6,.3,1) both; animation-delay: var(--draw-delay, 1.35s); }
+#HOME .home-intro-running .network-node, #HOME .home-intro-running .branch-node, #HOME .home-intro-running .home-dust, #HOME .home-intro-running .network-guide { animation: home-node-enter .3s ease-out both; animation-delay: var(--node-delay, 1.7s); }
+#HOME .home-intro-running .home-description { animation: home-question-enter .45s ease-out 1.9s both; }
+#HOME .home-intro-running .home-project-link { animation: home-question-enter .4s ease-out 2.05s both; }
+#HOME .home-intro-running .home-chapter { animation: home-node-enter .3s ease-out 2.15s both; }
+@keyframes home-title-enter { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+@keyframes home-question-enter { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@keyframes home-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes home-node-enter { from { opacity: 0; } to { opacity: 1; } }
+@media (min-width: 701px) and (max-width: 1199px) {
+  #HOME .home-question { font-size: 12px; }
+  #HOME .home-question--simple { left: auto; right: 6%; }
+  #HOME .home-center { top: 25%; }
+  #HOME .home-headline { margin-top: 25px; }
+  #HOME .home-description { font-size: 20px; }
+  #HOME .home-kicker { font-size: 9px; letter-spacing: .2em; }
+}
+@media (max-width: 700px) {
+  #HOME .home-stage { height: max(100svh, 680px); min-height: 680px; }
+  #HOME .home-center { top: 25.5%; width: 90%; }
+  #HOME .home-kicker { font-size: clamp(6px, 1.8vw, 9px); letter-spacing: .18em; }
+  #HOME .home-headline { font-size: clamp(27px, 7.8vw, 43px); margin-top: 23px; letter-spacing: -.06em; }
+  #HOME .home-description { font-size: clamp(12px, 3.5vw, 18px); margin-top: 15px; }
+  #HOME .home-network--desktop { display: none; }
+  #HOME .home-network--mobile { display: block; }
+  #HOME .home-question--simple, #HOME .home-question--scale { display: none; }
+  #HOME .home-question { font-size: 11px; }
+  #HOME .home-question--slow { left: 8%; top: 17%; }
+  #HOME .home-question--data { left: 7%; top: 47%; }
+  #HOME .home-question--failure { left: 7%; top: 65%; }
+  #HOME .home-project-link { top: 78%; font-size: 13px; gap: 10px; }
+  #HOME .home-chapter { bottom: 11%; font-size: 8px; letter-spacing: .09em; }
+  #HOME .home-bottom { left: 7%; right: 7%; bottom: 26px; font-size: 10px; }
+  #HOME .home-scroll { gap: 8px; }
+  #HOME .home-scroll svg { width: 14px; height: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #HOME .home-frame { opacity: 1; }
+  #HOME .home-network-layer, #HOME .home-question-position, #HOME .home-branch, #HOME .home-dust { transform: none; transition: none; }
+  #HOME .home-headline, #HOME .home-description, #HOME .home-project-link, #HOME .home-chapter, #HOME .home-question, #HOME .home-route, #HOME .branch-trace, #HOME .network-edge, #HOME .network-node, #HOME .branch-node, #HOME .home-dust, #HOME .network-guide { animation: none !important; stroke-dashoffset: 0; }
+  #HOME .home-question, #HOME .home-branch .home-route, #HOME .home-branch .branch-trace, #HOME .home-branch .branch-node, #HOME .home-project-link { transition: none; }
+}

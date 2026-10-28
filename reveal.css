@@ -1,0 +1,60 @@
+/* Position-driven reveals run in both scroll directions. Child hover styles stay independent. */
+:is(#ABOUT, #SKILLS, #PROJECT, #CONTACT) .content-reveal {
+  opacity: var(--content-progress, 1);
+  translate: 0 calc((1 - var(--content-progress, 1)) * var(--content-rise, 22px));
+  transition: opacity .12s linear, translate .15s ease-out;
+}
+
+/* Preserve a readable stagger even when scrolling quickly to the section. */
+:is(#ABOUT, #SKILLS, #PROJECT, #CONTACT) .content-reveal {
+  --content-rise: 40px;
+  transition: opacity .65s cubic-bezier(.22,.61,.36,1), translate .8s cubic-bezier(.22,.61,.36,1), filter .7s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+#ABOUT .about-photo.content-reveal {
+  filter: blur(calc((1 - var(--content-progress, 1)) * 3px));
+}
+
+#ABOUT .about-tag.content-reveal,
+#ABOUT .about-tag-label.content-reveal {
+  --content-rise: 0px;
+}
+
+#PROJECT .project-row.content-reveal {
+  translate: calc((1 - var(--content-progress, 1)) * -72px) 0;
+  transition: opacity .65s cubic-bezier(.22,.61,.36,1), translate .8s cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+@media (max-width: 767px) {
+  :is(#ABOUT, #SKILLS, #PROJECT, #CONTACT) .content-reveal {
+    --content-rise: 15px;
+  }
+
+  :is(#ABOUT, #SKILLS, #PROJECT, #CONTACT) .content-reveal {
+    --content-rise: 26px;
+    transition-duration: .5s, .6s, .5s;
+    transition-delay: min(var(--reveal-delay, 0s), .4s);
+  }
+
+  #PROJECT .project-row.content-reveal {
+    translate: calc((1 - var(--content-progress, 1)) * -36px) 0;
+    transition-duration: .5s, .6s;
+    transition-delay: min(var(--reveal-delay, 0s), .6s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(#ABOUT, #SKILLS, #PROJECT, #CONTACT) .content-reveal {
+    opacity: 1;
+    translate: none;
+    filter: none;
+    transition: none;
+  }
+
+  #PROJECT .project-row.content-reveal {
+    translate: none;
+    transition: none;
+  }
+}
