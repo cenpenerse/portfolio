@@ -75,7 +75,7 @@
   #HOME .home-stage { position: relative; top: auto; height: auto; min-height: 0; overflow: visible; }
   #HOME .home-frame { position: relative; inset: auto; display: flex; flex-direction: column; padding: max(110px, 15svh) 8vw 48px; }
   #HOME .home-center { display: contents; }
-  #HOME .home-kicker { font-size: clamp(8px, 2.45vw, 14px); letter-spacing: .04em; white-space: nowrap; max-width: none; text-align: center; margin: 0 auto 20px; }
+  #HOME .home-kicker { font-size: clamp(10px, 2.7vw, 14px); letter-spacing: .04em; white-space: nowrap; max-width: none; text-align: center; margin: 0 auto 20px; }
   #HOME .home-headline { font-size: clamp(30px, 6.5vw, 64px); text-align: center; margin: 0; white-space: normal; }
   #HOME .home-description { font-size: clamp(22px, 3.6vw, 30px); line-height: 1.65; text-align: center; margin: clamp(64px, 14svh, 120px) 0 0; }
   #HOME .home-description-name { display: block; }
