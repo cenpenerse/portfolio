@@ -1,7 +1,8 @@
 const home = document.querySelector('.home');
 const stage = document.querySelector('.home-stage');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const shortLandscape = window.matchMedia('(max-width: 1199px) and (max-height: 600px) and (orientation: landscape)');
+const compactHome = window.matchMedia('(max-width: 1199px)');
+const homeSteps = [...home.querySelectorAll('.home-headline, .home-description, .home-question--slow, .home-question--data, .home-question--failure, .home-project-link')];
 const clamp = (n, min = 0, max = 1) => Math.min(max, Math.max(min, n));
 let queued = false;
 function scrollFade(start, end, value) {
@@ -10,9 +11,25 @@ function scrollFade(start, end, value) {
 }
 
 function renderScroll() {
+  home.classList.toggle('home-scroll-sequence', compactHome.matches);
+  if (compactHome.matches) {
+    stage.style.setProperty('--progress', '0');
+    stage.style.setProperty('--copy-opacity', '1');
+    stage.style.setProperty('--scene-opacity', '1');
+    stage.style.setProperty('--question-opacity', '1');
+    homeSteps.forEach((element, index) => {
+      const top = element.getBoundingClientRect().top;
+      const visible = reduceMotion.matches || index === 0 || top < innerHeight * .82;
+      element.classList.toggle('home-step-visible', visible);
+      // Hidden links and question buttons must not receive focus before their reveal.
+      element.inert = !visible;
+    });
+    queued = false;
+    return;
+  }
+  homeSteps.forEach(element => { element.inert = false; });
   const distance = home.offsetHeight - stage.offsetHeight;
-  // A short landscape viewport must scroll through the tall introduction before fading it.
-  const rawProgress = reduceMotion.matches || shortLandscape.matches ? 0 : Math.max(0, -home.getBoundingClientRect().top / Math.max(1, distance));
+  const rawProgress = reduceMotion.matches ? 0 : Math.max(0, -home.getBoundingClientRect().top / Math.max(1, distance));
   const progress = clamp(rawProgress);
   stage.style.setProperty('--progress', progress.toFixed(4));
   // Give the question the full transition interval before the ABOUT content.
