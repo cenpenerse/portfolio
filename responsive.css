@@ -1,3 +1,14 @@
+/* Let short landscape screens read the entire introduction in normal document flow. */
+@media (max-width: 1199px) and (max-height: 600px) and (orientation: landscape) {
+  #HOME { height: auto; }
+  #HOME .home-stage { position: relative; top: auto; height: 780px; min-height: 780px; }
+  #HOME .home-about-transition { display: none; }
+  #HOME .home-center { top: 23%; }
+  #HOME .home-question--slow { top: 48%; }
+  #HOME .home-question--data { top: 58%; }
+  #HOME .home-question--failure { top: 68%; }
+}
+
 /* Readable copy and a quieter introduction on phones and tablets. */
 @media (max-width: 1199px) {
   #HOME .home-network-layer { display: none; }

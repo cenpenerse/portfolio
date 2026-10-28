@@ -1,6 +1,7 @@
 const home = document.querySelector('.home');
 const stage = document.querySelector('.home-stage');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const shortLandscape = window.matchMedia('(max-width: 1199px) and (max-height: 600px) and (orientation: landscape)');
 const clamp = (n, min = 0, max = 1) => Math.min(max, Math.max(min, n));
 let queued = false;
 function scrollFade(start, end, value) {
@@ -10,7 +11,8 @@ function scrollFade(start, end, value) {
 
 function renderScroll() {
   const distance = home.offsetHeight - stage.offsetHeight;
-  const rawProgress = reduceMotion.matches ? 0 : Math.max(0, -home.getBoundingClientRect().top / Math.max(1, distance));
+  // A short landscape viewport must scroll through the tall introduction before fading it.
+  const rawProgress = reduceMotion.matches || shortLandscape.matches ? 0 : Math.max(0, -home.getBoundingClientRect().top / Math.max(1, distance));
   const progress = clamp(rawProgress);
   stage.style.setProperty('--progress', progress.toFixed(4));
   // Give the question the full transition interval before the ABOUT content.
