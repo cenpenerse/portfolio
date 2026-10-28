@@ -4,6 +4,9 @@
   #HOME .home-kicker { font-size: 12px; letter-spacing: .12em; }
   #HOME .home-description { font-size: clamp(16px, 2.5vw, 22px); }
   #HOME .home-question { font-size: 14px; color: #b5b5b5; }
+  #HOME .home-question--slow { left: 12%; right: auto; top: 48%; }
+  #HOME .home-question--data { left: auto; right: 12%; top: 58%; }
+  #HOME .home-question--failure { left: 18%; right: auto; top: 68%; }
   #HOME .home-project-link { font-size: 16px; }
   #HOME .home-chapter { font-size: 12px; letter-spacing: .06em; }
   #HOME .home-bottom { font-size: 13px; }
@@ -39,6 +42,9 @@
 }
 
 @media (max-width: 767px) {
+  #HOME .home-question--slow { left: 10%; top: 52%; }
+  #HOME .home-question--data { right: 10%; top: 60%; }
+  #HOME .home-question--failure { left: 14%; top: 68%; }
   #HOME .home-kicker { max-width: 28em; margin-inline: auto; }
   #HOME .home-headline { white-space: normal; }
   #ABOUT .about-image-heading > p:last-child { padding-left: 0; }
