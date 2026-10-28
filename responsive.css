@@ -63,7 +63,7 @@
   #HOME .home-headline { font-size: clamp(30px, 6.5vw, 64px); text-align: center; margin: 0; white-space: normal; }
   #HOME .home-description { text-align: center; margin: clamp(64px, 14svh, 120px) 0 0; }
   #HOME .home-question-position { position: relative; inset: auto; transform: none; margin-top: clamp(48px, 10svh, 88px); }
-  #HOME .home-question--slow { align-self: flex-start; }
+  #HOME .home-question--slow { align-self: flex-start; margin-top: clamp(100px, 20svh, 180px); }
   #HOME .home-question--data { align-self: flex-end; }
   #HOME .home-question--failure { align-self: flex-start; margin-left: 5%; }
   #HOME .home-question--simple, #HOME .home-question--scale { display: none; }

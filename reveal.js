@@ -58,7 +58,10 @@
       const bounds = section.getBoundingClientRect();
       // Full-screen desktop sections finish at their anchor position, so all cards fit.
       const fitsScreen = !mobile.matches && bounds.height <= height * 1.12;
-      const sectionProgress = (height * .75 - bounds.top) / (height * .75);
+      const earlyReveal = ['ABOUT', 'SKILLS', 'PROJECT'].includes(section.id);
+      const sectionProgress = earlyReveal
+        ? (height * .95 - bounds.top) / (height * .65)
+        : (height * .75 - bounds.top) / (height * .75);
       items.forEach((record, index) => {
         let progress = 1;
         if (!reduced.matches && !record.element.contains(focused)) {
@@ -77,8 +80,10 @@
             }
           } else {
             const top = layoutTop(record.element);
-            const position = record.enhanced ? (height * .87 - top) / (height * .3) : (height * .98 - top) / (height * .33);
-            const stagger = Math.min(record.index * .025, .16);
+            const position = earlyReveal
+              ? (height * 1.03 - top) / (height * .18)
+              : record.enhanced ? (height * .87 - top) / (height * .3) : (height * .98 - top) / (height * .33);
+            const stagger = Math.min(record.index * (earlyReveal ? .012 : .025), earlyReveal ? .08 : .16);
             progress = smooth(stagger, 1 + stagger, position);
           }
         }
