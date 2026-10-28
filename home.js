@@ -24,7 +24,8 @@ function renderScroll() {
     stage.style.setProperty('--question-opacity', (reduceMotion.matches ? 1 : enter * (1 - leave)).toFixed(3));
     homeSteps.forEach((element, index) => {
       const top = element.getBoundingClientRect().top;
-      const visible = reduceMotion.matches || index === 0 || top < innerHeight * .82;
+      const hasScrolledToQuestions = index < 2 || -home.getBoundingClientRect().top > innerHeight * .1;
+      const visible = reduceMotion.matches || index === 0 || (hasScrolledToQuestions && top < innerHeight * .82);
       element.classList.toggle('home-step-visible', visible);
       // Hidden links and question buttons must not receive focus before their reveal.
       element.inert = !visible;
