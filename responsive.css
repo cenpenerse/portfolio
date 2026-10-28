@@ -9,8 +9,8 @@
 
 /* Readable copy and a quieter introduction on phones and tablets. */
 @media (max-width: 1199px) {
-  #CONTACT .contact-footer p { color: #b8b8b8; font-size: 16px; font-weight: 400; line-height: 1.8; }
-  #CONTACT .contact-footer p span { color: #aaa; font-size: 13px; font-weight: 400; letter-spacing: .04em; }
+  #CONTACT .contact-footer p { color: #aaa; font-size: 16px; font-weight: 400; line-height: 1.8; }
+  #CONTACT .contact-footer p span { color: #999; font-size: 13px; font-weight: 400; letter-spacing: .04em; }
   #CONTACT .contact-footer.content-reveal { opacity: 1; translate: none; filter: none; }
   #CONTACT .gallery-hint { color: #eee; font-weight: 600; }
   #CONTACT .gallery-hint span { color: #fff; font-size: 22px; font-weight: 600; }
