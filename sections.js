@@ -126,6 +126,13 @@ const galleryDots = [...document.querySelectorAll('.gallery-pagination button')]
 let galleryIndex = 1;
 let galleryOffset = 0;
 let drag = null;
+const galleryContacts = [
+  { text: 'github.com/cenpenerse', href: 'https://github.com/cenpenerse' },
+  { text: 'cenpenerse@naver.com', href: 'mailto:cenpenerse@naver.com' },
+  { text: '@atrum.rydex', href: 'https://www.instagram.com/atrum.rydex/' }
+];
+const contactLink = document.querySelector('.contact-email a');
+const emailCopy = document.querySelector('.copy-email');
 
 function galleryStep() { return galleryCards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(galleryTrack).gap); }
 function galleryPosition(index) { return (gallery.clientWidth - galleryCards[0].getBoundingClientRect().width) / 2 - index * galleryStep(); }
@@ -135,6 +142,17 @@ function setGallery(index) {
   galleryTrack.style.setProperty('--gallery-offset', `${galleryOffset}px`);
   galleryCards.forEach((card, i) => { card.classList.toggle('is-active', i === galleryIndex); card.setAttribute('aria-current', String(i === galleryIndex)); });
   galleryDots.forEach((dot, i) => { if (i === galleryIndex) dot.setAttribute('aria-current', 'true'); else dot.removeAttribute('aria-current'); });
+  const contact = galleryContacts[galleryIndex];
+  const changed = contactLink.textContent !== contact.text;
+  contactLink.textContent = contact.text;
+  contactLink.href = contact.href;
+  if (galleryIndex === 1) { contactLink.removeAttribute('target'); contactLink.removeAttribute('rel'); }
+  else { contactLink.target = '_blank'; contactLink.rel = 'noopener noreferrer'; }
+  emailCopy.hidden = galleryIndex !== 1;
+  document.querySelector('.copy-status').textContent = '';
+  if (changed && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    contactLink.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 300, easing: 'ease-out' });
+  }
 }
 galleryDots.forEach((dot, index) => dot.addEventListener('click', () => setGallery(index)));
 gallery.addEventListener('pointerdown', event => {
